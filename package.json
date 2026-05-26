@@ -1,0 +1,27 @@
+{
+  "name": "career-advisor-ai",
+  "version": "1.0.0",
+  "description": "AI-powered career advisor using OpenAI API",
+  "main": "dist/app.js",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node --no-deprecation dist/app.js",
+    "dev": "tsc && node --no-deprecation dist/app.js",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "test:coverage": "vitest --coverage"
+  },
+  "keywords": ["career", "advisor", "ai", "openai"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "openai": "^4.47.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.7",
+    "typescript": "^5.4.5",
+    "vitest": "^1.5.0"
+  }
+}
