@@ -93,10 +93,19 @@ export const FEW_SHOT_EXAMPLES: FewShotExample[] = [
 
 /**
  * Formats few-shot examples into a string format for prompt inclusion
+ * This function converts the array of example objects into a formatted text string
+ * that can be included in the AI prompt
  */
 export function formatFewShotExamples(): string {
+  // .map() transforms each example in the array into a formatted string
+  // It takes each example and its index (0, 1, 2, etc.) as parameters
   return FEW_SHOT_EXAMPLES.map((example, index) => {
+    // Extract the profile object from the current example for easier access
     const profile = example.profile;
+    
+    // Build a formatted string for this example
+    // ${} syntax is called template literals - it inserts variables into strings
+    // index + 1 makes it human-readable (Example 1, 2, 3 instead of 0, 1, 2)
     return `Example ${index + 1}:
 Education: ${profile.education}
 Experience: ${profile.experience}
@@ -106,4 +115,6 @@ Career Goal: ${profile.careerGoal}
 Recommended Roles: ${example.expectedRecommendations.join(', ')}
 `;
   }).join('\n---\n\n');
+  // .join() combines all the formatted examples into one string
+  // separated by "---" dividers between each example
 }
